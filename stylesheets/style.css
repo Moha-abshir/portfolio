@@ -15,7 +15,7 @@ html{
 }
 
 body{
-  background: fixed url(images/mesh-245.png) no-repeat center;
+  background: fixed url(../images/mesh-245.png) no-repeat center;
   color: black;
   font-weight: 500;
   min-height: 300vh;
