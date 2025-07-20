@@ -1,0 +1,849 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Smooch+Sans:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Edu+SA+Hand:wght@400..700&family=Marcellus&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,102.1,100..900,52;1,8..144,102.1,100..900,52&family=Smooch+Sans:wght@100..900&display=swap');
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth; 
+}
+
+body{
+  background: fixed url(/images/mesh-245.png) no-repeat center;
+  color: black;
+  font-weight: 500;
+  min-height: 300vh;
+  font-family: 'Edu NSW ACT Hand Pre', cursive;
+  animation: pop-up .5s cubic-bezier(0,.99,.48,.75) forwards;
+  
+}
+@keyframes pop-up {
+  0%{
+    opacity: 0;
+    transform: translateY(-8rem);
+  }
+  100%{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+.back-to-top{
+  text-decoration: none;
+  color: black;
+}
+.logo{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 2.4rem;
+  cursor: pointer;
+  margin-top: .5em;
+  margin-left: 0.5em;
+  text-shadow: 1px 1px rgb(189, 187, 187),
+               1px 2px rgb(189, 187, 187),
+               1px 3px rgb(189, 187, 187),
+               1px 4px rgb(189, 187, 187),
+               1px 5px rgb(189, 187, 187);
+}
+
+.hamburger, .close{
+  display: none;
+  font-size: 2.5rem;
+  position: absolute;
+  right: .2em;
+  top: -.5em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.responsive-nav{
+  display: none;
+  width: 40vw;
+  position: absolute;
+  right: 0;
+  top: -.5em;
+  background-color: rgba(0, 0, 255, 0.8);
+  border-radius: 20px;
+  z-index: 1;
+}
+.responsive-nav ul{
+  list-style-type: none;
+  margin: 0 .5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.responsive-nav ul li{
+  margin-bottom: .5em;
+  border-bottom: 1px solid grey;
+}
+.responsive-nav ul li:nth-child(1){
+  margin-top: 2em;
+}
+.responsive-nav ul li a{
+  text-decoration: none;
+  color: white;
+}
+.responsive-nav ul li a:active{
+  color: rgb(0, 255, 242);
+}
+
+nav{
+  display: flex;
+  background-color: rgba(178, 177, 224, 0.5); 
+  border-bottom: 1px solid #ffffff79;
+  position: fixed;  
+  top: 0;
+  right: 2%;
+  opacity: 0.9;
+  width: 51vw;
+  height: auto;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 2s ease-in-out;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
+}
+
+
+nav ul{
+  display: flex;
+  gap: 5vw;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 3rem;
+  align-items: center;
+  position: relative;
+  left: 2.8rem;
+}
+nav ul li:last-child{
+  background-color: black;
+  color: white;
+  margin-right: 0;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 20px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+  transition: all 1s;
+}
+nav ul li a:hover{
+  color: blue;
+  
+}
+nav ul li a::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left:0;
+  
+}
+nav ul li a:hover::after{
+  border-top: 2px solid rgb(5, 5, 5);
+  animation: underline 1s cubic-bezier(0.175, 0.8, 0.32, 1.275) infinite;
+}
+@keyframes underline {
+  0%, 10%{
+    left: 0;
+    right: 100%;
+  }
+  40%, 60%{
+    left: 0;
+    right: 0;
+  }
+  90%, 100%{
+    left: 100%;
+    right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .back-to-top{ 
+    color: rgb(68, 68, 68);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .logo{
+    font-size: 2rem;
+  }
+
+  nav{
+   display: none;
+  }
+  .hamburger{
+    display: block;
+  }
+  .hamburger.hide{
+    display: none;
+  }
+  .close.show{
+    display: block;
+  }
+  .responsive-nav.show{
+    display: block;
+    animation: show-slow .5s cubic-bezier(0.23, 1, 0.320, 1) forwards;
+  }
+  
+  @keyframes show-slow {
+    0%,20%{
+      opacity: 0;
+      transform: translateY(-4em) translatex(4em) scale(.8);
+    }
+    90%,100%{
+      opacity: 1;
+      transform: none;
+    }
+
+  }
+}
+
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  z-index: 0;
+}
+
+
+.introdution-content{
+  width: 80vw;
+  height: auto;
+  margin: 3em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pop-out .8s  cubic-bezier(0,.99,.39,1.44) forwards;
+}
+.introdution-content .introduction{
+  display: flex;
+  flex-direction: row;
+}
+.introdution-content .introduction div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introdution-content .introduction .name{
+  text-align: justify;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family:'Dancing Script', cursive;;
+  color: rgb(1, 50, 65);
+}
+.introdution-content .introduction p{
+  font-size: 1.5rem;
+  text-align: center;
+}
+.introdution-content .skills{
+  color:rgb(255, 255, 255);
+  font-size: 1.2rem;
+}
+.image-holder{
+  width: 50vw;
+  animation: image-slide .8s cubic-bezier(0,.99,.39,1.44) forwards;
+}
+
+.image-holder img{
+  width: 80%;
+  border-radius: 0px 0px 168px 193px;
+  -webkit-border-radius: 0px 0px 168px 193px;
+  -moz-border-radius: 0px 0px 168px 193px;
+  border: 5px solid #696262;
+  border: 2px solid gray;
+}
+@keyframes pop-out {
+  0%{
+    opacity: 0;
+    transform: translateX(-10rem) scale(.5);
+  }
+  100%{
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes image-slide {
+  0%{
+    opacity: 0;
+    transform:  translateX(10rem) scale(.5);
+  }
+  100%{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.introdution-content button {
+  background-color: aqua;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15), 
+              0 1.5px 4px 0 rgba(0, 0, 0, 0.10);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75em 2em;
+  font-weight: bold;
+  cursor: pointer;
+  color: blue;
+  text-align: center;
+  font-family: 'Edu NSW ACT Hand Pre', cursive;
+  transition: box-shadow 0.3s;
+}
+.introdution-content button a{
+  color: blue;
+  text-decoration: none;
+}
+
+.introdution-content button:hover {
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.20), 
+              0 3px 8px 0 rgba(0, 0, 0, 0.12);
+}
+.introdution-content button img{
+  width: 20px;
+  padding-top: 0;
+  margin-left: 1em;
+  animation: bounce-effects 2s ease-in-out infinite;
+ }
+
+.social-media-icons{
+  display: flex;
+  width: 20vw;
+  align-items: center;
+  margin-top: 1.5em;
+}
+.social-media-icons img{
+  border: none;
+  border-radius: 0;
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  .introdution-content{
+    margin: 0 0;
+    height: 80vh;
+  }
+  .introdution-content .introduction{
+    display: flex;
+    flex-direction: column;
+    column-gap: 1em;
+    align-items: center;
+  }
+  .introdution-content .introduction p{
+    font-size: 1.3rem;
+    margin-bottom: 1em;
+  }
+  .image-holder img{
+    margin-bottom: 1em;
+  }
+}
+
+.about-section{
+  width: 90vw;
+  height: auto;
+  padding: 1em;
+  background-color: rgba(0, 128, 128, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  align-items: center;
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-section:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+.about-section h2{
+  background: linear-gradient(90deg, #54a1f3, #7fdfaf, #9da3f8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.about-section p{
+  text-align: center;
+  line-height: 2.2rem;
+}
+.about-section button{
+   background-color: aqua;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15), 
+              0 1.5px 4px 0 rgba(0, 0, 0, 0.10);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75em 2em;
+  font-weight: bold;
+  cursor: pointer;
+  color: blue;
+  text-align: center;
+  font-family: 'Edu NSW ACT Hand Pre', cursive;
+  transition: box-shadow 0.3s;
+}
+.about-section button a{
+  text-decoration: none;
+}
+.about-section button  img{
+ animation: drop-down 1.5s ease-in-out infinite;
+}
+@keyframes drop-down {
+  0%{
+    opacity: 1;
+    transform: translateY(-0.5rem);
+  }
+  100%{
+    opacity: 0.5;
+    transform: none;
+  }
+}
+
+@media (max-width:500px) {
+  .about-section{
+    width: 90vw;
+    align-items: flex-start;
+    margin-top: 10em;
+    column-gap: 4em;
+  }
+  .about-section h2{
+    font-size: 2.3rem;
+  }
+  .about-section p{
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 2em;
+  }
+}
+
+.porfolio-showcase{
+  width: 80vw;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.porfolio-showcase h2{
+  background: linear-gradient(90deg, #54a1f3, #7fdfaf, #9da3f8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.porfolio-showcase p{
+  text-align: center;
+}
+
+.projects-certificates-skills{
+  width: 80vw;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  margin: 2em 0;
+} 
+.projects-certificates-skills .nav-buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+.projects-certificates-skills button{
+  width: 10em;
+  height: 3em;
+  border: none;
+  border-radius: 20px;
+  margin-left: 2.5rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: rgb(2, 86, 107);
+}
+.projects-certificates-skills button.active{
+  box-shadow: 0 6px 6px 0 rgba(255, 255, 255, 0.5), 0 1.5px 4px 0 rgba(255, 255, 255, 0.5);
+  transform: scale(1.07);
+  text-decoration: underline;
+}
+
+.projects-certificates-skills .projects{
+  width: 100%;
+  display: none;
+}
+.projects-certificates-skills .projects.active{
+  display: flex;
+  justify-content: space-between;
+  animation: slide-in .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.projects-certificates-skills .projects a img{
+  width: 25vw;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.28), 0 1.5px 4px 0 rgba(0,0,0,0.22);
+  transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+}
+
+
+.projects-certificates-skills .projects a img:hover {
+  transform: scale(1.1);
+}
+.projects-certificates-skills .certificates{
+  width: 100%;
+  margin-top: 1em;
+  display: none;
+}
+.projects-certificates-skills .certificates.active{
+  display: flex;
+  justify-content: space-between;
+  animation: slide-in .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+
+}
+
+.projects-certificates-skills .certificates img{
+  width: 25dvw;
+  height: 60dvh;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.28), 0 1.5px 4px 0 rgba(0,0,0,0.22);
+  transition: all .5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.projects-certificates-skills .certificates img:hover{
+  transform: scale(1.05);
+}
+.projects-certificates-skills .skills{
+  width: 100%;
+  margin-top: 2em;
+  display: none;
+}
+.projects-certificates-skills .skills.active{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+  animation: slide-in .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slide-in {
+  0%, 10%{
+    opacity: 0;
+    transform: translateX(2em) ;
+  }
+
+  90%, 100%{
+    opacity: 1;
+    transform: none;
+  }
+}
+.projects-certificates-skills .skills img{
+  padding: 1em;
+  border: 2px solid rgba(0, 0, 0, 0.116);
+  border-radius: 20px;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.28), 0 1.5px 4px 0 rgba(0,0,0,0.22);
+}
+
+@media (max-width: 500px) {
+  .porfolio-showcase h2{
+    font-size: 2.5em;
+    margin-bottom: .3em;
+  }
+  .porfolio-showcase p{
+    text-align: justify;
+  }
+   .projects-certificates-skills .nav-buttons{
+    display: flex;
+    width: 90vw;
+    justify-content: space-around;
+  } 
+  .projects-certificates-skills button{
+    background-color: transparent;
+  }
+  .projects-certificates-skills button.active{
+    background-color: transparent;
+  }
+  .projects-certificates-skills .projects.active{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .projects-certificates-skills .projects a img{
+    margin-left: -.5rem;
+    width: 90vw;
+    height:30vh;
+  }
+  .projects-certificates-skills .projects a img:hover{
+    transform: none;
+  }
+  .projects-certificates-skills .certificates.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+  }
+  .projects-certificates-skills .certificates img{
+    width: 90vw;
+    height:30vh;
+  }
+  .projects-certificates-skills .certificates img:hover{
+    transform: none;
+  }
+  .projects-certificates-skills .skills img{
+    width: 10vw;
+    flex: 0 0 calc(33% - 30px);
+    column-gap: 1em;
+  }
+  
+}
+
+.motive-goals{
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin-top: 2em;
+  
+}
+.motive-goals .motive{
+  width: 40%;
+}
+.motive-goals .motive h1{
+  font-size: 1.9rem;
+  font-weight: bolder;
+}
+.motive-goals .motive h3{
+  color: rgb(19, 253, 175);
+  font-size: 1.5rem;
+}
+.motive-goals .motive p{
+  text-align: left;
+  font-size: 0.8rem;
+}
+.motive-goals .motive button{
+   background-color: aqua;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15), 
+              0 1.5px 4px 0 rgba(0, 0, 0, 0.10);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75em 2em;
+  margin-top: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  color: blue;
+  text-align: center;
+  font-family: 'Edu NSW ACT Hand Pre', cursive;
+  transition: box-shadow 0.3s
+}
+.motive-goals .motive button:hover{
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.20), 
+              0 3px 8px 0 rgba(0, 0, 0, 0.12);
+}
+.motive-goals .motive button img{
+  animation: bounce-effects 2s ease-in-out infinite;
+}
+@keyframes bounce-effects {
+  0%{
+    opacity: 0;
+    transform: translateX(-1rem) scale(.5);
+  }
+  100%{
+    opacity: 1;
+    transform: none;
+  }
+}
+.motive-goals .goals{
+  width: 50%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  column-gap: 2em;
+  background: linear-gradient(45deg, rgb(11, 8, 230), rgb(8, 185, 230), rgb(109, 207, 109));
+}
+.motive-goals .goals .goals-details{
+  display: flex;
+  flex-direction: row;
+  width: 38vw;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 1em;
+  background-color: white;
+  font-size: .6rem;
+}
+.motive-goals .goals .goals-details button{
+  padding: .8em;
+  border: none;
+  border-radius: 50%;
+  background-color: teal;
+  color: beige;
+}
+
+@media (max-width: 500px) {
+  .motive-goals{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+  .motive-goals .motive{
+    width: 90vw;
+    margin-bottom: 2em;
+  }
+  .motive-goals .motive p{
+    font-size: 1.2rem;
+  }
+  .motive-goals .goals{
+    display: none;
+  }
+}
+
+.client-testimonials {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.client-testimonials h2{
+  font-size: 3rem;
+  background: linear-gradient(90deg, #54a1f3, #7fdfaf, #9da3f8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1em 0;
+}
+.client-testimonials .client-ratings{
+  display: flex;
+  justify-content: space-between;
+}
+.client-testimonials .client-ratings div{
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  height: auto;
+  background-color: rgba(21, 238, 238, 0.671);
+  font-size: .7rem;
+  border-top: 2px solid black;
+  border-radius: 20px;
+  padding: 1em;
+}
+.client-testimonials .client-ratings div p{
+  text-align: left;
+  margin: 1em 0;
+}
+.client-testimonials .client-ratings div span{
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+.client-testimonials .client-ratings div img{
+  margin-top: 0;
+}
+.client-testimonials .client-ratings div .img{
+  width: 20%;
+  border-radius: 50%;
+  border: 2px solid teal;
+}
+@media (max-width: 500px) {
+  .client-testimonials h2{
+    font-size: 2.8rem;
+  }
+  .client-testimonials .client-ratings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .client-testimonials .client-ratings div{
+    width: 90vw;
+    margin-bottom: 1em;
+  }
+  .client-testimonials .client-ratings div p{
+    font-size: 1rem;
+  }
+}
+
+.collaboration{
+  width: 80vw;
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.collaboration p{
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  background: linear-gradient(90deg, #54a1f3, #7fdfaf, #9da3f8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.collaboration button{
+   background-color: aqua;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15), 
+              0 1.5px 4px 0 rgba(0, 0, 0, 0.10);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75em 2em;
+  margin: 1em 0;
+  cursor: pointer;
+  color: blue;
+  text-align: center;
+  transition: all .3s cubic-bezier(0.215, 0.610, 0.355, 1) ;
+}
+.collaboration button:hover{
+  transform: scale(1.1);
+}
+@media (max-width: 500px) {
+  .collaboration{
+    align-items: flex-start;
+  }
+}
+
+/* footer{
+  display: flex;
+  flex-direction: column;
+  column-gap: 1em;
+  justify-content: center;
+  align-items: center; 
+  background-color: rgba(4, 26, 100, 0.493);
+  color:white;
+  height: 30vh;
+}
+footer .contact-links{
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+}
+footer .links p{
+  color: rgb(8, 53, 53);
+  font-weight: bold;
+}
+footer .links ul{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  line-height: 2rem;
+}
+footer .links ul li a{
+text-decoration: none;
+color: white;
+transition: all .3s ease-in-out;
+}
+footer .links ul li a:hover{
+  text-decoration: underline;
+  color: rgb(18, 18, 65);
+}
+@media (max-width: 500px) {
+  
+}
+ */
