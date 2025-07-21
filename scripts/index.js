@@ -1,3 +1,9 @@
+const mode = document.querySelector('.mode-regulator');
+const body = document.querySelector('body')
+mode.addEventListener('click', ()=>{
+  body.classList.toggle('dark-mode')
+})
+
 const words = [
   "Web Developer",
   "UI/UX Designer",
