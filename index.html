@@ -10,10 +10,8 @@
 <body>
   
   <header>
-  <div class="logo"> <a class="back-to-top" href="index.html"><span>MohaMD</span></a></div>
-    <div class="mode-regulator">
-      <img src="images/icons/dark-mode.png" alt="mode-toggle">
-    </div>  
+<!--   <div class="logo"> <a class="back-to-top" href="index.html"><span>MohaMD</span></a></div> -->
+
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -21,6 +19,11 @@
         <li><a href="#portfolio">Projects</a></li>
         <li><a href="#Testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <div class="mode-regulator">
+          <img src="images/icons/dark-mode.png" alt="mode-toggle">
+        </div>
+        </li>
       </ul>
     </nav>
 
@@ -275,6 +278,35 @@
         <button onclick="ScheduleCall()">
           Schedule A Call
         </button>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="contact-form">
+        <form action="" method="post">
+          <div><h2>CONTACT FORM</h2></div>
+          <div class="names">
+            <input type="text" placeholder="First Name" required autocomplete="off">
+            <input type="text" placeholder="Last Name" required autocomplete="off">
+          </div>
+          <div class="contact-details">
+            <input type="tel" placeholder="Phone Number" required autocomplete="off">
+            <input type="email" placeholder="Email" required autocomplete="off">
+          </div>
+          <div class="services">
+              <select name="service" required>
+                <option value="" disabled selected>Select a Service</option>
+                <option value="web-design">Web Design</option>
+                <option value="development">Web Development</option>
+                <option value="consultation">Consultation</option>
+              </select>
+          </div>
+          <div class="additional-info">
+            <textarea name="added-words" id="added-words" placeholder="Additional Info (optional)"></textarea>
+          </div>
+          <div class="submission">
+            <input type="submit" value="submit">
+          </div>
+        </form>
       </div>
     </section>
   </main>
